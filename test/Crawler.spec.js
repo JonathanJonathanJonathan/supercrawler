@@ -20,12 +20,14 @@ describe("Crawler", function () {
       pageLocationHeader,
       pageStatusCode,
       pageBody,
+      pageHeaders,
       robotsStatusCode,
       robotsTxt;
 
   beforeEach(function () {
     pageContentType = "text/html";
     pageStatusCode = 200;
+    pageHeaders = '';
     pageBody = "<html><body>test</body></html>";
     robotsStatusCode = 200;
     robotsTxt = ["User-agent: *",

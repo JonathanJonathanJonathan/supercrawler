@@ -104,6 +104,9 @@ crawler.addHandler(["text/plain", "text/html"], myCustomHandler);
 
 // Custom content handler for HTML pages.
 crawler.addHandler("text/html", function (context) {
+  var headers = context.headers;
+  logger.info("Headers received: ", headers);
+  
   var sizeKb = Buffer.byteLength(context.body) / 1024;
   logger.info("Processed", context.url, "Size=", sizeKb, "KB");
 });
@@ -366,6 +369,9 @@ crawler.addHandler(supercrawler.handlers.sitemapsParser());
 ```
 
 ## Changelog
+### 1.7.0
+
+* [Added] `headers` are now available in the custom handlers [JonathanJonathanJonathan](https://github.com/JonathanJonathanJonathan).
 
 ### 1.7.0
 
